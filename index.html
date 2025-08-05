@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./script.js"></script>
-    
+
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./style/standard.css">
-    <title>Notiblock</title>
+    <title>Notizblock</title>
 </head>
-<body>
-    
+<body onload="renderNotes()">
+    <h1>Notizblock</h1>
+    <input id="note-input" type="text">
+    <button  onclick="addNote()">Notiz speichern</button>
+    <button onclick="renderNotes()">Notizen anzeigen</button>
+    <div id="content"> 
+        
+    </div>    
 </body>
 </html>
