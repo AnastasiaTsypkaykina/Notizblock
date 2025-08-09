@@ -1,14 +1,17 @@
 let notes = ["Banana", "Orange", "Rasen mähen", "Abendessen vorbereiten"];
 let notesTitle = ["Einkaufsliste", "", "Aufgaben", ""];
 
+function init() {
+    getFromLocalStorage();
+    renderNotes();
+}
 function renderNotes() {
   let contentRef = document.getElementById("content");
   contentRef.innerHTML = "";
   for (let indexNote = 0; indexNote < notes.length; indexNote++) {
     const note = notes[indexNote];
     contentRef.innerHTML += getNoteTemplate(indexNote);    
-  }
-  getFromLocalStorage();
+  }  
 }
 
 function getNoteTemplate(indexNote) {
@@ -21,8 +24,13 @@ function addNote() {
   let noteInput = noteInputRef.value;
   let titleInputRef = document.getElementById("title-input");
   let titleInput = titleInputRef.value;
-  notes.push(noteInput);
-  notesTitle.push(titleInput);
+  if(noteInput != ""){
+    notes.push(noteInput);
+  }
+  if (titleInput != "") {
+    notesTitle.push(titleInput);
+  }
+  
   saveToLocalStorage();
   renderNotes();
   noteInputRef.value = "";
@@ -41,13 +49,13 @@ function saveToLocalStorage() {
 function getFromLocalStorage() {
   const notesFromStorage = localStorage.getItem("notes");
   let noteArr = JSON.parse(notesFromStorage);
-  if (noteArr != "") {
+  if (noteArr != null) {
     notes = noteArr;
   }
 
   const titlesFromStorage = localStorage.getItem("titles");
   let titleArr = JSON.parse(titlesFromStorage);
-  if (titleArr != "") {
+  if (titleArr != null) {
     notesTitle = titleArr;
   }
 }
