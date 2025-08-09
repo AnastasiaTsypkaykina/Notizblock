@@ -1,5 +1,5 @@
 let notes = ["Banana", "Orange", "Rasen mähen", "Abendessen vorbereiten"];
-let notesTitle = ["Einkaufsliste", "", "Aufgaben", ""];
+let notesTitle = ["Einkaufsliste", "Zu kaufen", "Aufgaben", "Erinnerung"];
 
 function init() {
     getFromLocalStorage();
@@ -15,9 +15,9 @@ function renderNotes() {
 }
 
 function getNoteTemplate(indexNote) {
-  return `<h2 class="note-title">${notesTitle[indexNote]}</h2>
+  return `<li class="note-box"><a href="#"><h2 class="note-title">${notesTitle[indexNote]}</h2>
     <br><p class="note">- ${notes[indexNote]} 
-    <button onclick="deleteNote(${indexNote})" class="button-delete"> x </button> </p><br>`;
+    <button onclick="deleteNote(${indexNote})" class="button-delete"> x </button> </p></a></li><br>`;
 }
 function addNote() {
   let noteInputRef = document.getElementById("note-input");

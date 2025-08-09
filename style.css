@@ -1,7 +1,7 @@
 .input {	
 	position:relative;	
 		
-	background: linear-gradient(21deg, #96d0ef, #0d463a);	
+	background: linear-gradient(21deg, #e4d87c, #a9ac0b);	
 	padding: 3px;	
 	display: inline-block;	
 	border-radius: 9999em;	
@@ -41,4 +41,57 @@ html::after {
 	position:absolute;
 	left:0;
 	top:0;
+}
+h2 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+p {
+  font-family: 'Reenie Beanie';
+  font-size: 2rem;
+}
+ul,li{
+  list-style:none;
+}
+ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 15 px;
+}
+ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:200px;
+  width:300px;
+  padding:15px;
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  transform: rotate(-6deg);
+  transition: transform .15s linear;
+}
+ul li{
+  margin:1em;
+}
+ul li:nth-child(even) a{
+  transform:rotate(4deg);
+  position:relative;
+  top:5px;
+}
+ul li:nth-child(3n) a{
+  transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+}
+ul li:nth-child(5n) a{
+  transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+}
+ul li a:hover,ul li a:focus{
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  transform: scale(1.1);
+  position:relative;
+  z-index:5;
 }
