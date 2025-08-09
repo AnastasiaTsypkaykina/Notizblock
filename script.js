@@ -15,9 +15,9 @@ function renderNotes() {
 }
 
 function getNoteTemplate(indexNote) {
-  return `<h2>${notesTitle[indexNote]}</h2>
-    <br><p>- ${notes[indexNote]} 
-    <button onclick="deleteNote(${indexNote})"> x </button> </p><br>`;
+  return `<h2 class="note-title">${notesTitle[indexNote]}</h2>
+    <br><p class="note">- ${notes[indexNote]} 
+    <button onclick="deleteNote(${indexNote})" class="button-delete"> x </button> </p><br>`;
 }
 function addNote() {
   let noteInputRef = document.getElementById("note-input");

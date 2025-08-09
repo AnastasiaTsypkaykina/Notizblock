@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./script.js"></script>
 
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./style/standard.css">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style/standard.css" />
     <title>Notizblock</title>
-</head>
-<body onload="init()">
+  </head>
+  <body onload="init()">
     <h1>Notizblock</h1>
-    <input id="title-input" type="text">
-    <input id="note-input" type="text">
-    <button  onclick="addNote()">Notiz speichern</button>
-    <button onclick="renderNotes()">Notizen anzeigen</button>
-    <div id="content"> 
-        
-    </div>    
-</body>
+    <span class="input">
+      <input id="title-input" class="title-input" type="text" />
+      <input id="note-input" class="note-input" type="text" />
+    </span>
+    <button onclick="addNote()" class="button-save">Notiz speichern</button>
+
+    <div id="content"></div>
+  </body>
 </html>
